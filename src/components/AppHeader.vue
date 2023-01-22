@@ -5,7 +5,20 @@ export default {
     name: "AppHeader",
     data() {
         return {
-
+            navigation: [
+                {
+                    label: 'Home',
+                    route: 'home',
+                },
+                {
+                    label: 'La Mia Società',
+                    route: 'about',
+                },
+                {
+                    label: 'Progetti',
+                    route: 'projects',
+                }
+            ]
         }
     },
     components: {
@@ -31,17 +44,13 @@ export default {
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <li class="nav-item" v-for=" (navItem, index) in navigation " :key="index"> <router-link
+                                :to="{ name: navItem.route }" class="nav-link active" aria-current="page">
+                                {{ navItem.label }}</router-link>
                         </li>
+
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Features</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Pricing</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled">Disabled</a>
+                            <a href="http://127.0.0.1:8000/admin" class="nav-link ">Go to Admin</a>
                         </li>
                     </ul>
                 </div>
