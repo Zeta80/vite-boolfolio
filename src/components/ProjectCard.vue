@@ -34,7 +34,7 @@ export default {
 
     <div class="card" v-for="project in project" :key="project.id">
         <div class="card-header">
-            Tech
+            {{ project.type ? project.type.name : 'Nessuna categoria' }}
         </div>
         <div class="card-body">
             <h5 class="card-title">{{ project.title }}</h5>
