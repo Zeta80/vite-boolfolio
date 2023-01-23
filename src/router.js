@@ -3,6 +3,7 @@ import HomePage from './pages/HomePage.vue';
 import AboutUs from './pages/AboutUs.vue';
 import NotFound from './pages/NotFound.vue';
 import Projects from './pages/Projects.vue';
+import SingleProject from './pages/SingleProject.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -22,6 +23,11 @@ const router = createRouter({
             path: "/progetti",
             name: "projects",
             component: Projects,
+        },
+        {
+            path: "/progetti/:slug",
+            name: "single-project",
+            component: SingleProject,
         },
         // da mettere alla fine 
         {

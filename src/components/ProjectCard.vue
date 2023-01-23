@@ -39,7 +39,8 @@ export default {
         <div class="card-body">
             <h5 class="card-title">{{ project.title }}</h5>
             <p class="card-text">{{ sharpText(project.description) }} </p>
-            <a href="#" class="btn btn-primary">Scoprimi</a>
+            <router-link :to="{ name: 'single-project', params: { slug: project.slug } }"
+                class="btn btn-primary">Scoprimi</router-link>
         </div>
     </div>
 
